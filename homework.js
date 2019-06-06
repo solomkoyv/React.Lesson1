@@ -1,4 +1,4 @@
-const employers = [
+var employers = [
   "Alex",
   "",
   "ludmila",
@@ -12,17 +12,17 @@ const employers = [
   " Ann"
 ];
 
-const employersNames = [];
-for (const i = 0; i < employers.length; i++) {
+var employersNames = [];
+for (var i = 0; i < employers.length; i++) {
   if (employers[i].length > 0 && employers[i].length != "") {
     employersNames.push(employers[i]);
   }
 }
-for (const i = 0; i < employersNames.length; i++) {
+for (var i = 0; i < employersNames.length; i++) {
   employersNames[i] = employersNames[i].toLowerCase().trim();
 }
 
-const sponsors = {
+var sponsors = {
   cash: [40000, 5000, 30400, 12000],
   eu: ["SRL", "PLO", "J&K"],
   rus: ["RusAuto", "SBO"]
@@ -30,19 +30,19 @@ const sponsors = {
 
 function calcCash(own) {
   own = own || 0;
-  const everyCash = Array.prototype.slice.call(arguments);
-  const total = own;
-  for (const i = 0; i < everyCash[1].length; i++) {
+  var everyCash = Array.prototype.slice.call(arguments);
+  var total = own;
+  for (var i = 0; i < everyCash[1].length; i++) {
     total += +everyCash[1][i];
   }
   return total;
 }
 
-const money = calcCash(null, sponsors.cash);
+var money = calcCash(null, sponsors.cash);
 
 function makeBusiness(owner, director, cash, emp) {
   director = director || "Victor";
-  const sumSponsors = sponsors.eu.concat(sponsors.rus, "unexpected sponsor");
+  var sumSponsors = sponsors.eu.concat(sponsors.rus, "unexpected sponsor");
   console.log(
     "We have a business. Owner: " +
       owner +
